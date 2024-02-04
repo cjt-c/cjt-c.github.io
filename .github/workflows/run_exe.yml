@@ -1,0 +1,21 @@
+name: Run Chrome
+
+on:
+  push:
+    branches:
+      - main  # 根据你的需要更改分支名称
+
+jobs:
+  run_chrome:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Run Chrome
+        run: |
+          /Google/Chrome/Application/chrome.exe  # 修改成你的 Chrome 可执行文件路径
